@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx http-server . -p 4200 -P \"http://localhost:4200\"",
+    "build": "webpack",
     "sass": "sass --watch ./Sass/main.scss:./CSS/style.css",
     "prefix": "postcss ./CSS/style.css --use autoprefixer -d ./CSS/prefixed",
     "css-minify": "css-minify -f ./CSS/prefixed/style.css -o ./CSS/prefixed/min"
@@ -13,11 +14,17 @@
   "license": "ISC",
   "browserslist": "last 4 versions",
   "devDependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
     "autoprefixer": "^10.4.13",
+    "babel-loader": "^9.1.0",
+    "babel-polyfill": "^6.26.0",
     "css-minify": "^2.0.0",
     "postcss": "^8.4.19",
     "postcss-cli": "^10.1.0",
-    "sass": "^1.56.1"
+    "sass": "^1.56.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "http-server": "^14.1.1"
