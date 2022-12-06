@@ -1,0 +1,21 @@
+@mixin shadow {
+    box-shadow: 5px 5px 5px darken($grey-color, 13%);
+}
+
+@mixin dark-shadow {
+    box-shadow: 5px 5px 5px darken($grey-color, 26%);
+}
+
+@mixin btn {
+    height: 40px;
+    width: 50%;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    @include shadow;
+    cursor: pointer;
+    font-size: 1em;
+    color: $white-color;
+    background-image: linear-gradient(to bottom right, $secondary-color, $primary-color);
+}

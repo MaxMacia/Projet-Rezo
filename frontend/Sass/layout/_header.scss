@@ -1,0 +1,10 @@
+header {
+    border-bottom: solid 1px $colorBlack;
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+        font-family: 'Kalam';
+        padding-bottom: 50px;
+    }
+    box-shadow: 0px 5px 5px darken($grey-color, 13%);
+}
