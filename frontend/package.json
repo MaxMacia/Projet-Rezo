@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./Sass/main.scss:./CSS/style.css",
+    "prefix": "postcss ./CSS/style.css --use autoprefixer -d ./CSS/prefixed",
+    "css-minify": "css-minify -f ./CSS/prefixed/style.css -o ./CSS/prefixed/min"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "css-minify": "^2.0.0",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.56.1"
+  }
+}
