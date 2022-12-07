@@ -2,53 +2,59 @@
 @import "./utils/mixin";
 
 @import "./components/button";
+@import "./components/image-pp";
 
 @import "./layout/general-elements";
 @import "./layout/header";
+@import "./layout/page-login-signup";
 
-
-#global-container {
+#form-message-list {
+    margin-top: 50px;
+    padding-bottom: 50px;
+    height: 300px;
+    font-family: 'Roboto';
     display: flex;
     flex-direction: column;
-    font-family: 'Roboto';
-    font-size: 1em;
-    ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        list-style: none;
-        margin-top: 20px;
-        li {
-            width: 20%;
-            margin-right: 16px;
-            padding-bottom: 5px;
-            font-size: 1.5em;
-            text-align: center;
-            cursor: pointer;
-        }
-        .selected {
-            border-bottom: solid 2px $tertiary-color;
-        }
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: solid 1px darken($grey-color, 5%);
+    label {
+        font-size: 1.5em;
+        border-bottom: solid 2px $tertiary-color;
+        padding-bottom: 5px;
     }
-    form {
-        margin-top: 20px;
-        padding-top: 20px;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        height: 300px;
+    textarea {
+        height: 150px;
         width: 90%;
-        text-align: center;
-        margin-left: 20px;
-        background-color: $white-color;
-        @include shadow;
-        #errorMsg {
-            font-weight: bold;
-            color: $redColor;
-            font-size: 1em;
-        }
+        resize: none;
+        border: solid 1px darken($grey-color, 5%);
+        border-radius: 10px;
     }
 }
 
+#message {
+    display: flex;
+    border-top: solid 1px darken($grey-color, 5%);
+    border-bottom: solid 1px darken($grey-color, 5%);
+    justify-content: space-between;
+    align-items: center;
+    height: 200px;
+    padding-left: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    #message-block {
+        width: 80%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-right: 10px;
+        #user-identifier {
+            font-weight: bold;
+            font-size: 1.1;
+        }
+        #message-body {
+            text-align: justify;
+        }
+    }
+}

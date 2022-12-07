@@ -6,13 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Roboto&display=swap" rel="stylesheet">
     <link href="../CSS/style.css" rel="stylesheet">
-    <title>Rezo - login/signup</title>
+    <title>Rezo - Liste Messages</title>
 </head>
 <body>
     <header>
-        <img>
+        <figure>
+            <img id="image-pp">
+            <figcaption id="user-identifier"></figcaption>
+        </figure>
         <h1>Rezo</h1>
     </header>
+    <main>
+        <form id="form-message-list">
+            <label for="poster-message">Postez un message!</label>
+            <textarea name="poster-message" maxlength="330"></textarea>
+            <input class="button" type="submit" value="Envoyer">
+        </form>
+        <div id="message-list">
+            <div id="message">
+                <img id="image-pp" src="http://localhost:3000/images/pp.jpeg">
+                <div id="message-block">
+                    <div id="user-identifier">Maxence</div>
+                    <div id="message-body">
+                        Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.
+                    </div>
+                </div>
+            </div>
+            <div id="message">
+                <img id="image-pp" src="http://localhost:3000/images/pp.jpeg">
+                <div id="message-block">
+                    <div id="user-identifier">Maxence</div>
+                    <div id="message-body">
+                        Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.
+                    </div>
+                </div>
+            </div>
+            <div id="message">
+                <img id="image-pp" src="http://localhost:3000/images/pp.jpeg">
+                <div id="message-block">
+                    <div id="user-identifier">Maxence</div>
+                    <div id="message-body">
+                        Ergo ego senator inimicus, si ita vultis, homini, amicus esse, sicut semper fui, rei publicae debeo. Quid? si ipsas inimicitias, depono rei publicae causa, quis me tandem iure reprehendet, praesertim cum ego omnium meorum consiliorum atque factorum exempla semper ex summorum hominum consiliis atque factis mihi censuerim petenda.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
     <script src="../JS/config.js"></script>
     <script src="../JS/message-list.js"></script>
 </body>

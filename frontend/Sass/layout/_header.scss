@@ -2,11 +2,11 @@ header {
     border-bottom: solid 1px $colorBlack;
     display: flex;
     justify-content: space-around;
-    img {
-        height: 50px;
-        border: solid 1px $colorBlack;
-        border-radius: 50px;
+    #image-pp {
         margin-top: 50px;
+    }
+    figcaption {
+        font-family: 'Roboto';
     }
     h1 {
         text-align: center;
