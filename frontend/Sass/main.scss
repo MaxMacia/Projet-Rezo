@@ -44,9 +44,10 @@
         margin-left: 20px;
         background-color: $white-color;
         @include shadow;
-        p {
+        #errorMsg {
             font-weight: bold;
-            color: red;
+            color: $redColor;
+            font-size: 1em;
         }
     }
 }

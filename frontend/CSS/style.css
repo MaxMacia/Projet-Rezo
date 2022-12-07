@@ -79,9 +79,10 @@ header h1 {
   background-color: #FFF;
   box-shadow: 5px 5px 5px #d1d1d1;
 }
-#global-container form p {
+#global-container form #errorMsg {
   font-weight: bold;
-  color: red;
+  color: #8b0000;
+  font-size: 1em;
 }
 
 /*# sourceMappingURL=style.css.map */

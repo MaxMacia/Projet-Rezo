@@ -43,7 +43,7 @@ document.querySelector('#form input[type="submit"]').addEventListener("click", (
         loadConfig()
         .then(data => {
             const config = data;
-            return fetch(`${config.host}${config.port}/api/auth/${btn.value == "S'enregister" ? "signup" : "login"}`,{
+            fetch(`${config.host}${config.port}/api/auth/${btn.value == "S'enregister" ? "signup" : "login"}`,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -52,14 +52,26 @@ document.querySelector('#form input[type="submit"]').addEventListener("click", (
             })
             .then(res => res.json())
             .then(result => {
+                if (result.error) {
+                    if (result.error.message) {
+                        throw error = "Requête invalide"; 
+                    }
+                    throw error = result.error;
+                }
                 location.href = `../HTML/message-list.html?id=${result.userId}`;
+            })
+            .catch(error => {
+                console.dir(error);
+                let errorElt = document.createElement("div");
+                document.querySelector("#form").appendChild(errorElt);
+                errorElt.innerHTML = `<h3 id="errorMsg">${error}</h3>`
             });
         })
         .catch(error => {
             console.dir(error);
             let errorElt = document.createElement("div");
-            document.querySelector("#password").appendChild(errorElt);
-            errorElt.innerHTML = `<h3>Une erreur est survenue, 
+            document.querySelector("#form").appendChild(errorElt);
+            errorElt.innerHTML = `<h3 id="errorMsg">Une erreur est survenue, 
                                         veuillez nous excuser pour le désagrément.</h3>`
         });
     }
