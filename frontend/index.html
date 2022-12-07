@@ -22,17 +22,18 @@
             </nav>
             <form id="form">
                 <div>
-                    <label id="identifiant" for="identifiant">Identifiant</label>
-                    <input type="text" name="identifiant">
+                    <label for="identifiant">Identifiant</label>
+                    <input id="id" type="text" name="identifiant" required>
                 </div>
                 <div>
                     <label for="mot-de-passe">Mot de passe</label>
-                    <input type="text" name="mot-de-passe">
+                    <input id="password" type="password" name="mot-de-passe" required>
                 </div>
                 <input class="button" type="submit" value="Connexion">
             </form>
         </div>
     </main>
+    <script src="./JS/config.js"></script>
     <script src="./JS/index.js"></script>
 </body>
 </html>

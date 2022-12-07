@@ -44,6 +44,10 @@
         margin-left: 20px;
         background-color: $white-color;
         @include shadow;
+        p {
+            font-weight: bold;
+            color: red;
+        }
     }
 }
 
