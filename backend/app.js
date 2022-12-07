@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const path = require('path');
 const RezoUser = require('./models/RezoUser');
+const Message = require('./models/Message');
 const rezoUserRoutes = require('./routes/rezoUser');
+const messageRoutes = require('./routes/message');
 const app = express();
 
 dotenv.config();
@@ -18,6 +20,7 @@ mongoose.connect(
 .catch(() => console.log("Connexion à MongoDB à échoué!"));
 
 RezoUser.watch().on('change', data => console.log(new Date(), data));
+Message.watch().on('change', data => console.log(new Date(), data));
 
 app.use(express.json());
 
@@ -29,6 +32,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/auth', rezoUserRoutes);
+app.use('/api/messages', messageRoutes);
 app.use('/images', express.static(path.join(__dirname, 'images')))
 
 
