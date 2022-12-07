@@ -5,7 +5,7 @@ document.getElementById('signup').addEventListener('click', () => {
     if (!document.getElementById('email')) {
         email.setAttribute('id', 'email');
         email.innerHTML = `<div>
-                                <label for="email">e-mail</label>
+                                <label for="email">E-mail</label>
                                 <input type="email" name="email">
                             </div>`;
         document.getElementById('form').prepend(email);
