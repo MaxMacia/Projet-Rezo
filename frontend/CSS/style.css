@@ -23,7 +23,15 @@
 
 header {
   border-bottom: solid 1px #000000;
+  display: flex;
+  justify-content: space-around;
   box-shadow: 0px 5px 5px #d1d1d1;
+}
+header img {
+  height: 50px;
+  border: solid 1px #000000;
+  border-radius: 50px;
+  margin-top: 50px;
 }
 header h1 {
   text-align: center;
@@ -70,6 +78,10 @@ header h1 {
   margin-left: 20px;
   background-color: #FFF;
   box-shadow: 5px 5px 5px #d1d1d1;
+}
+#global-container form p {
+  font-weight: bold;
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const path = require('path');
 const RezoUser = require('./models/RezoUser');
 const rezoUserRoutes = require('./routes/rezoUser');
 const app = express();
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api/auth', rezoUserRoutes);
+app.use('/images', express.static(path.join(__dirname, 'images')))
 
 
 

@@ -12,8 +12,14 @@ exports.signup = (req, res, next) => {
         });
         return rezoUser.save()
         .then(() => {
-            const message = "Utilisateur enregistré";
-            res.status(201).json({message});
+            res.status(201).json({
+                userId: rezoUser._id,
+                token: jwt.sign(
+                    { userId: rezoUser._id },
+                    'RANDOM_TOKEN_SECRET',
+                    { expiresIn: '24h' }
+                )
+            });
         });
     })
     .catch(error => res.status(500).json({ error }));
@@ -46,3 +52,9 @@ exports.login = (req, res, next) => {
     })
     .catch(error => res.status(500).json({ error }));
 };
+
+exports.getUserbyId = (req, res, next) => {
+    RezoUser.findOne({ _id: req.params.id })
+    .then(rezoUser => res.status(200).json(rezoUser))
+    .catch(error => res.status(404).json({ error }));
+}

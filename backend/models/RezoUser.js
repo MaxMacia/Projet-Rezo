@@ -5,7 +5,7 @@ const rezoUserSchema = mongoose.Schema({
     email: { type: String },
     identifier: { type: String, required: true, unique: true },
     password: { type: String, required: true, unique: true },
-    ppUrl: { type: String },
+    ppUrl: { type: String, default: "http://localhost:3000/images/pp.jpeg" },
     pDescription: { type: String }
 });
 

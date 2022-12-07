@@ -43,19 +43,24 @@ document.querySelector('#form input[type="submit"]').addEventListener("click", (
         loadConfig()
         .then(data => {
             const config = data;
-            fetch(`${config.host}${config.port}/api/auth/${btn.value == "S'enregister" ? "signup" : "login"}`,{
+            return fetch(`${config.host}${config.port}/api/auth/${btn.value == "S'enregister" ? "signup" : "login"}`,{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(request)
             })
-            .then(res => {
-                const result = res.json();
-                console.log(result);
-            })
-            .catch();
+            .then(res => res.json())
+            .then(result => {
+                location.href = `../HTML/message-list.html?id=${result.userId}`;
+            });
         })
-        .catch();
+        .catch(error => {
+            console.dir(error);
+            let errorElt = document.createElement("div");
+            document.querySelector("#password").appendChild(errorElt);
+            errorElt.innerHTML = `<h3>Une erreur est survenue, 
+                                        veuillez nous excuser pour le désagrément.</h3>`
+        });
     }
 })
