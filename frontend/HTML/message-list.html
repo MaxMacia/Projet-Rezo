@@ -19,7 +19,7 @@
     <main>
         <form id="form-message-list">
             <label for="poster-message">Postez un message!</label>
-            <textarea name="poster-message" maxlength="330"></textarea>
+            <textarea name="poster-message" minlength="5" maxlength="330" required></textarea>
             <input class="button" type="submit" value="Envoyer">
         </form>
         <div id="message-list">
@@ -53,6 +53,7 @@
         </div>
     </main>
     <script src="../JS/config.js"></script>
+    <script src="../JS/tokenManager.js"></script>
     <script src="../JS/message-list.js"></script>
 </body>
 </html>

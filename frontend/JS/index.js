@@ -20,7 +20,7 @@ document.getElementById('login').addEventListener('click', () => {
     document.querySelector('#form input[type="submit"]').value = "Connexion";
 })
 
-document.querySelector('#form input[type="submit"]').addEventListener("click", (event) => {
+document.querySelector('#form input[type="submit"]').addEventListener("click", event => {
     event.preventDefault();
     const btn = document.querySelector('#form input[type="submit"]');
     let valid = true;
@@ -31,7 +31,6 @@ document.querySelector('#form input[type="submit"]').addEventListener("click", (
         }
     }
     if (valid) {
-
         const request = btn.value == "S'enregister" ? {
             email: `${document.getElementById('email').value}`,
             identifier: `${document.getElementById('id').value}`,
@@ -58,6 +57,7 @@ document.querySelector('#form input[type="submit"]').addEventListener("click", (
                     }
                     throw error = result.error;
                 }
+                saveToken(result.token);
                 location.href = `../HTML/message-list.html?id=${result.userId}`;
             })
             .catch(error => {
