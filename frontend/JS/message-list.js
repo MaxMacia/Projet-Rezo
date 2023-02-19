@@ -62,6 +62,12 @@ loadConfig()
                                         <div id="message-body">
                                             ${message.content}
                                         </div>
+                                        <div class="coeur">
+                                            <i class="fa-regular fa-heart"></i>
+                                            <div class="coeur-bg">
+                                                <i class="fa-solid fa-heart" ></i>
+                                            </div>
+                                        </div>
                                     </div>`;
                     document.getElementById('message-list').prepend(elt);
                 })

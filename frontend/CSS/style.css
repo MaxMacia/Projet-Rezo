@@ -148,4 +148,25 @@ header h3#errorMsg {
   text-align: justify;
 }
 
+.fa-solid.fa-heart {
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  color: transparent;
+}
+
+.coeur {
+  position: relative;
+  z-index: 0;
+}
+.coeur .coeur-bg {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=style.css.map */
